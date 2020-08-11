@@ -49,7 +49,7 @@ titles_df <- lapply(vid_ids, get_all_titles) %>% unlist() %>% as_tibble() %>% cb
 res_df <- left_join(res_df, titles_df, c( "id"= "vid_ids")) 
 
 # viewcounts OK up to now
-# 
+
 res_df %>% 
   filter(str_detect(value, "^IBD")) %>% 
   purrr::set_names("id", "view_count", "like_count", "dislike_count", "fav_count", "comm_count", "title") %>% 
